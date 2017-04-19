@@ -15,14 +15,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.beam.runners.core;
 
-import static org.apache.beam.runners.core.GroupByKeyViaGroupByKeyOnly.GroupAlsoByWindow;
+package org.apache.beam.sdk.options;
+
+import com.google.auto.service.AutoService;
+import com.google.common.collect.ImmutableList;
 
 /**
- * Standard aggregator names related to {@link GroupAlsoByWindow}.
+ * A registrar containing the default GCP options.
  */
-public abstract class GroupAlsoByWindowsAggregators {
-  public static final String DROPPED_DUE_TO_CLOSED_WINDOW_COUNTER = "DroppedDueToClosedWindow";
-  public static final String DROPPED_DUE_TO_LATENESS_COUNTER = "DroppedDueToLateness";
+@AutoService(PipelineOptionsRegistrar.class)
+public class GcpPipelineOptionsRegistrar implements PipelineOptionsRegistrar {
+  @Override
+  public Iterable<Class<? extends PipelineOptions>> getPipelineOptions() {
+    return ImmutableList.<Class<? extends PipelineOptions>>builder()
+        .add(BigQueryOptions.class)
+        .add(GcpOptions.class)
+        .add(GcsOptions.class)
+        .add(GoogleApiDebugOptions.class)
+        .add(PubsubOptions.class)
+        .build();
+  }
 }
