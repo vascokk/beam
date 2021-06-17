@@ -33,8 +33,8 @@
   <packaging>jar</packaging>
 
   <properties>
-    <apex.core.version>3.5.0</apex.core.version>
-    <apex.malhar.version>3.4.0</apex.malhar.version>
+    <apex.core.version>3.6.0</apex.core.version>
+    <apex.malhar.version>3.7.0</apex.malhar.version>
     <skipIntegrationTests>true</skipIntegrationTests>
     <!-- memory limit for embedded cluster -->
     <surefire.args>-Xmx2048m</surefire.args>
@@ -293,7 +293,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <ignore/>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
