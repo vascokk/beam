@@ -66,7 +66,7 @@
   </build>
 
   <properties>
-    <aws.version>1.11.18</aws.version>
+    <aws.version>1.11.63</aws.version>
   </properties>
 
   <dependencies>
